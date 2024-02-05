@@ -58,7 +58,7 @@ ind.names <- rownames(X)
 if(kernel!="linear" && kernel!="delta") stop("Please select a valid kernel")
 df <- data.frame(Y,X)
 num.nz.gr <- length(nonzero.groups)
-if(kernel=="delta" && part.balance){
+if(kernel=="delta" && balance){
   df.partition <- groupdata2::fold(data=df,k=nfolds,cat_col = "y")
 } else{
   df.partition <- groupdata2::fold(data=df,k=nfolds)
